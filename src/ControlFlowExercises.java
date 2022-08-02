@@ -8,14 +8,23 @@ public class ControlFlowExercises {
 //        }
 
         //ex 2.a, b, c refactored for a, b, and c.
-        int i = 2;
-        do {
-            System.out.println(i);
-            i *= i;
-        } while (i <= 1000000 && i != 0); //without setting i != 0, system infinitely prints 0.
+//        int i = 2;
+//        do {
+//            System.out.println(i);
+//            i *= i;
+//        } while (i <= 1000000 && i != 0); //without setting i != 0, system infinitely prints 0.
+
+        //refactoring the last two exercises with "for" loops
+//        for (int i = 5; i <= 15; i++) {
+//            System.out.print(i + " ");
+//        }
+//        for (int i = 2; i <= 1000000 & i != 0; i *= i) {
+//            System.out.println(i);
+//        }
 
 
-        //Create a do-while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000. Output should equal:
+
+
 
 
     }
