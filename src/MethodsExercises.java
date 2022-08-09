@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -8,11 +9,13 @@ public class MethodsExercises {
 //        System.out.println(multiply(1, 2));
 //        System.out.println(divide(0, 2));
 //        System.out.println(modulus(1, 2));
-//        Scanner sc = new Scanner(System.in); ex 2.
-//        System.out.print("Enter a number between 1 and 10: "); ex 2.
+//        Scanner sc = new Scanner(System.in); //ex 2.
+//        System.out.print("Enter a number between 1 and 10: "); //ex 2.
 //        int userInput = getInteger(3, 7);//ex2.
 //        System.out.println(getInteger(6,8,"")); //ex 2. but different, cleaner path to the answer
-        factorial();//ex.3
+//        factorial();//ex.3
+
+        diceRoll();
 
     }
 //ex 1. Basic Arithmetic
@@ -56,13 +59,13 @@ public class MethodsExercises {
             System.out.println("Your number is out of range, please try again: ");
             ;
         } else {
-            System.out.println("Great! you chose " + userInput + " which is within the range.");
+            System.out.println("Great! you chose " + userInput + " which is within the range!");
             return userInput;
         }
         return getInteger(min, max);
     }
 
-    //the below methods  do the same as above, but method, getInteger(), calls the method, outOfRange() to accomplish the goal.
+    //the below methods do the same as above, but the below method, getInteger(), calls the method, outOfRange() to accomplish one of our goals.
     public static String outOfRange() {
         System.out.println("Sorry number was not in range try again: ");
         return ""; //returning empty string as placeholder that satisfies a non-void method
@@ -74,7 +77,7 @@ public class MethodsExercises {
         int userInput1 = scanner.nextInt();
 
         if (userInput1 >= min && userInput1 <= max) {
-            System.out.println("Congrats your in range");
+            System.out.println("Congrats you're in range");
             return userInput1;
         }
         return getInteger(min, max, outOfRange());
@@ -83,52 +86,76 @@ public class MethodsExercises {
 
 
     //3.Calculate the factorial of a number.
+    public static void factorial() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println();//making a line break
 
-
-        public static void factorial() {
-            Scanner sc = new Scanner(System.in);
-            System.out.println();//making a line break
-
-            String userInterest; //declaring my variable
-            do {//creating a do-while inside the method
-                System.out.println("Enter a number from 1 to 10 again: ");
-                int userInput = sc.nextInt();
-                {
-                    int i, fact = 1;
-                    int number = userInput;
-                    for (i = 1; i <= number; i++) {
-                        fact = fact * i;
-                    }
-                    System.out.println("Factorial of " + number + " is: " + fact);
-                    System.out.println("Would you like to continue? [y/n]");
-                    sc.nextLine();//clearing the buffer (scanner)
-                    userInterest = sc.nextLine();
+        String userInterest; //declaring my variable
+        do {//creating a do-while inside the method
+            System.out.println("Enter a number from 1 to 10 again: ");
+            long userInput = sc.nextLong();
+            {
+                int i, fact = 1;
+                long number = userInput;
+                for (i = 1; i <= number; i++) {
+                    fact = fact * i;
                 }
+                System.out.println("Factorial of " + number + " is: " + fact);
+                System.out.println("Would you like to continue? [y/n]");
+                sc.nextLine();//clearing the buffer (scanner)
+                userInterest = sc.nextLine();
+            }
 
 
-            } while (userInterest.equalsIgnoreCase("y"));
+        } while (userInterest.equalsIgnoreCase("y"));
 
+    }
 
+    //4. Create an application that simulates dice rolling.
+    public static void diceRoll() {
+        System.out.println("How many sides do your dice have? ");
+        Scanner sc = new Scanner(System.in);
+        int sidesOfDice = sc.nextInt();
+        System.out.println("You're working with two " + sidesOfDice + "-sided dice");
+        //need to keep running but its closing
+        System.out.println("Now roll the dice by smashing the 'r' key");
+        sc.nextLine();
+        String userInterest = sc.nextLine();
+        System.out.println(userInterest); //sout it out!
+        //using a conditional to receive their key-input, and then run the next condition.
+
+        if (userInterest.equalsIgnoreCase("r")) {
+            int die1 = (int) (Math.random() * sidesOfDice + 1);//making and assigning random generators for the dice roll
+            int die2 = (int) (Math.random() * sidesOfDice + 1);
+            System.out.println("first die is " + die1);//sout it out
+            System.out.println("second die is " + die2);
+            int rolled = die1 + die2;
+            System.out.println("You rolled " + rolled + ".");
+
+            System.out.println("Would you like to roll again? [y/n]");
+            sc.nextLine(); //buffer reset
+            String rollAgain = sc.nextLine();
+
+            if (rollAgain.equalsIgnoreCase("y")) {//using a conditional to run code based on if they'd like to roll again
+                //create a method that is for rolling the dice
+            }
         }
+
+    }
+
+
+//sout second die with Math .Random
 }
-
-//    Prompt the user to enter an integer from 1 to 10.
-//    Display the factorial of the number entered by the user.
-//    Ask if the user wants to continue.
-//    Use a for loop to calculate the factorial.
-//    Assume that the user will enter an integer, but verify it’s between 1 and 10.
-//    Use the long type to store the factorial.
-//    Continue only if the user agrees to.
-//    A factorial is a number multiplied by each of the numbers before it.
+//       info for ex 4. Prompt the user to roll the dice.
+//        "Roll" two n-sided dice, display the results of each, and then ask the user if he/she wants to roll the dice again.
+//        Use static methods to implement the method(s) that generate the random numbers.
+//        Use the .random method of the java.lang.Math class to generate random numbers.
+//    public static int shakeAndThrow() { //my random dice roller
 //
-//    Factorials are denoted by the exclamation point (n!). Ex:
+//        return
+//    }
+//    //ex 5.
 
-
-
-
-
-    // using the return value
-    //int three = add(6, 3) / subtract(4, 1);
 
 
 
