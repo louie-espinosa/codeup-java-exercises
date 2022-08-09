@@ -19,11 +19,11 @@ public class Input {
     }
     int getInt(int min, int max) {
 
-        System.out.print("Find the number between 1 and 10: ");
+        System.out.print("Enter number between 1 and 10: ");
         int userInput = scanner.nextInt();
 
         if (userInput < min || userInput > max) {
-            System.out.println("You're out of range, son ");
+            System.out.println("You're out of range, try again: ");
 
         } else {
             return userInput;
@@ -31,27 +31,27 @@ public class Input {
         return getInt(min, max);
     }
       int getInt() {
-          System.out.println("How young are you? ");
+          System.out.println("Enter another number:  ");
           int numInput = scanner.nextInt();
           return numInput;
     }
-    int getDouble(double min, double max) {
+    double getDouble(double min, double max) {
 
-        System.out.print("Give me some Pi : ");
-        int doubleInput = scanner.nextInt();
+        System.out.print("Enter a number : ");
+        double doubleInput = scanner.nextDouble();
 
         if (doubleInput < min || doubleInput > max) {
             System.out.println("You're out of range, my man ");
-
-        } else {
-            return doubleInput;
+            doubleInput = getDouble(min, max);
         }
-        return getDouble(min, max);
+        return doubleInput;
     }
-//    double getDouble() {
-//
-//        return
-//    }
+    public double getDouble() {
+        System.out.println("Enter number here: ");
+        double dubInput = scanner.nextInt();
+        return dubInput;
+
+    }
 
 
 
