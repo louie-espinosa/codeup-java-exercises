@@ -144,17 +144,8 @@ public class MethodsExercises {
     }
 
 
-//sout second die with Math .Random
 }
-//       info for ex 4. Prompt the user to roll the dice.
-//        "Roll" two n-sided dice, display the results of each, and then ask the user if he/she wants to roll the dice again.
-//        Use static methods to implement the method(s) that generate the random numbers.
-//        Use the .random method of the java.lang.Math class to generate random numbers.
-//    public static int shakeAndThrow() { //my random dice roller
-//
-//        return
-//    }
-//    //ex 5.
+
 
 
 

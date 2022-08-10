@@ -7,51 +7,50 @@ public class Input {
     private Scanner scanner = new Scanner(System.in); //Setting up the scanner in the field
 
     public String getString() {
-        System.out.println("Who is your fave FF Summon/Esper/Eidolon/GF/Aeon/Primal/Avatar? ");
         String nameInput = scanner.nextLine();
         return nameInput;
     }
-    public boolean yesNo() {
-        System.out.println("Do you like video games? ");
+    public boolean yesNo(String prompt) {
+        //prompt is asked in the psvm
         String confirm = scanner.nextLine();
         System.out.println(confirm);//return
         return confirm.equalsIgnoreCase("y") || confirm.equalsIgnoreCase("yes") || confirm.equalsIgnoreCase("sure") || confirm.equalsIgnoreCase("absolutely");
     }
-    int getInt(int min, int max) {
+    public int getInt() {
+        return scanner.nextInt();
+    }
 
-        System.out.print("Enter number between 1 and 10: ");
-        int userInput = scanner.nextInt();
+    public int getInt(int min, int max, String prompt) {
+        //print prompt every time this method is called
+        System.out.println(prompt);
+        //get int from user
+        int userInput = getInt();
 
         if (userInput < min || userInput > max) {
-            System.out.println("You're out of range, try again: ");
-
-        } else {
-            return userInput;
+            System.out.println("You're number is not between " + min + " and " + max);
+            userInput = getInt(min, max, prompt);
         }
-        return getInt(min, max);
+        //else return the int
+        return userInput;
     }
-      int getInt() {
-          System.out.println("Enter another number:  ");
-          int numInput = scanner.nextInt();
-          return numInput;
-    }
-    double getDouble(double min, double max) {
+    public double getDouble() {
+        //using this as a scanner
+        return scanner.nextDouble();
 
-        System.out.print("Enter a number : ");
-        double doubleInput = scanner.nextDouble();
+    }
+
+    public double getDouble(double min, double max) {
+        //my prompts are best situated in the inputTest psvm, so that these functions can be reused without polluting w./ addiotinal prompts
+        double doubleInput = getDouble();
 
         if (doubleInput < min || doubleInput > max) {
             System.out.println("You're out of range, my man ");
             doubleInput = getDouble(min, max);
         }
+        //else return the double
         return doubleInput;
     }
-    public double getDouble() {
-        System.out.println("Enter number here: ");
-        double dubInput = scanner.nextInt();
-        return dubInput;
 
-    }
 
 
 
