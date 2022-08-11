@@ -83,8 +83,6 @@ public class MethodsExercises {
         return getInteger(min, max, outOfRange());
 
     }
-
-
     //3.Calculate the factorial of a number.
     public static void factorial() {
         Scanner sc = new Scanner(System.in);
