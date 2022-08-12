@@ -25,7 +25,7 @@ public class Rectangle extends Quadrilateral {
 
     @Override
     public double getPerimeter() {
-        int perimeter = (length*2) + (length*2);
+        int perimeter = (length*2) + (width*2);
         return perimeter;
     }
 
