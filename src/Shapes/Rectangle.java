@@ -2,47 +2,36 @@ package Shapes;
 
 import static java.lang.Math.PI;
 
-public class Rectangle {
-
-    protected int length; //field
-    protected int width;
-
-
+//5. Change your existing Rectangle class to inherit from Quadrilateral and implement Measurable.
+//
+//        IntelliJ can automatically create the skeleton of all the methods that need to be implemented.
+//
+public class Rectangle extends Quadrilateral {
     public Rectangle(int length, int width) {
-        this.length = length;
-        this.width = width;
+        super(length, width);
     }
+    //field is inherited?
 
-    public Rectangle() {
-
-    }
-
-    public int getLength() {
-        return length;
-    }
-
+    @Override
     public void setLength(int length) {
         this.length = length;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
+    @Override
     public void setWidth(int width) {
         this.width = width;
     }
 
-    //perimeter = 2 x length + 2 x width
-    //area = length x width
-    public int getPerimeter() {
-        //declare and assign
-        int perimeter = (2*length) + (2*width);
+
+    @Override
+    public double getPerimeter() {
+        int perimeter = (length*2) + (length*2);
         return perimeter;
     }
-    public int getArea() {
+
+    @Override
+    public double getArea() {
         int area = length * width;
         return area;
     }
-
 }

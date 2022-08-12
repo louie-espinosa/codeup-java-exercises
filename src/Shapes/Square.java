@@ -1,20 +1,34 @@
 package Shapes;
 
-public class Square extends Rectangle {
+//6. Change your existing Square class to extend Quadrilateral.
+public class Square extends Quadrilateral {
 
-    protected int side;//creating a field for side
 
-    public Square(int side) {// inherited constructor
-        super(side, side);
-        this.side = side;
-    }
-    @Override
-    public int getPerimeter() {
-        return this.side * 4;
+    public Square(int length, int width) {
+        super(length, width);
     }
 
     @Override
-    public int getArea() {
-        return side * side;
+    public void setLength(int length) {
+    this.length = length;
+    this.width = length;
+    }
+
+    @Override
+    public void setWidth(int width) {
+       this.width = width;
+       this.length = width;
+    }
+
+    @Override
+    public double getPerimeter() {
+        int perimeterOfSquare = length * 4;
+        return perimeterOfSquare;
+    }
+
+    @Override
+    public double getArea() {
+        int areaOfSquare = length * width;
+        return areaOfSquare;
     }
 }
