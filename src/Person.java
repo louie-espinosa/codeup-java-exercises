@@ -23,8 +23,10 @@ public class Person {
     public String hajimemashite(String greeting) {//attempting to call a method into new method
         return sayHello() + greeting;
     }
+    //The MAIN
     public static void main(String[] args) {
         Person classmate = new Person("Feathered", "Serpent");//Object basics
+
         classmate.sayHello();
         classmate.setName("cheeky fellow");
         System.out.println(classmate.hajimemashite(" for the first time"));
