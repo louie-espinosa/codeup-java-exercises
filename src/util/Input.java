@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner scanner = new Scanner(System.in); //Setting up the scanner in the field
+    private Scanner nsa = new Scanner(System.in); //Setting up the scanner in the field
 
     public String getString() {
-        String nameInput = scanner.nextLine();
+        String nameInput = nsa.nextLine();
         return nameInput;
     }
     public boolean yesNo(String prompt) {
         //prompt is asked in the psvm
-        String confirm = scanner.nextLine();
+        String confirm = nsa.nextLine();
         System.out.println(confirm);//return
         return confirm.equalsIgnoreCase("y") || confirm.equalsIgnoreCase("yes") || confirm.equalsIgnoreCase("sure") || confirm.equalsIgnoreCase("absolutely");
     }
     public int getInt() {
-        return scanner.nextInt();
+        return nsa.nextInt();
     }
 
     public int getInt(int min, int max, String prompt) {
@@ -35,7 +35,7 @@ public class Input {
     }
     public double getDouble() {
         //using this as a scanner
-        return scanner.nextDouble();
+        return nsa.nextDouble();
 
     }
 

@@ -14,16 +14,13 @@ public class StudentTest {
         //adding some grades
         joey.addGrade(65);
         joey.addGrade(100);
+        joey.addGrade(75);
         System.out.println("joey's grades so far are:  " + joey.getGrades());
         System.out.println("joey's grade average so far is: " + joey.getGradeAverage());
 
 
         //System.out.println("joey's grade is: " + joey.addGrade());
 
-
-
-
-        //System.out.println("grade average = " + grades.getGradeAverage());
 
 
     }
