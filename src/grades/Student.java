@@ -42,6 +42,8 @@ public class Student {
         return average/ total;//returning the total value that was added together, divided by the number of grades.
     }
 
-
-
+    @Override
+    public String toString() {
+        return  name + " " + grades;
+    }
 }
