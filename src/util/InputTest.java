@@ -13,7 +13,7 @@ public class InputTest {
         System.out.print("Enter an int: ");
         System.out.println("Bingo, " + gave.getInt(2, 8, "") + " was in the range");//an empty string as placeholder to satisfy the three parameters
         System.out.println("Give me some PI: ");
-        System.out.println(gave.getDouble(3.1, 3.142));
+        System.out.println(gave.getDouble(3.0, 3.142));
 
     }
 }
