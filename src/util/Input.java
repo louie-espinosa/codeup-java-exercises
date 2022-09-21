@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Input {
 
-    private Scanner nsa = new Scanner(System.in); //Setting up the scanner in the field
+    private static Scanner nsa = new Scanner(System.in); //Setting up the scanner in the field
 
     public String getString() {
         String nameInput = nsa.nextLine();
         return nameInput;
     }
-    public boolean yesNo(String prompt) {
+    public static boolean yesNo(String prompt) {
         //prompt is asked in the psvm
         String confirm = nsa.nextLine();
         System.out.println(confirm);//return
